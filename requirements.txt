@@ -1,3 +1,2 @@
 kagglehub
 python-dotenv
-kaggle
