@@ -42,6 +42,7 @@ class Data():
         sell_prices = pd.read_csv(f"{self.data_path}/sell_prices.csv")
 
         if choice == 'single_prod_day_wise':
+            sell_prices['item_id']
             data = sales[product_id][6 : self.train_val_split]
 
         elif choice == 'all_prod_of_1_shop':
@@ -49,6 +50,7 @@ class Data():
 
         elif choice == 'one_prod_in_all_shops':
             pass
+
         return data
         
 
