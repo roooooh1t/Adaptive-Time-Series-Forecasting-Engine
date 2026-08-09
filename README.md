@@ -3,6 +3,11 @@ We are using Walmart m5 dataset for our usecase. We have downloaded the data fro
 
 ```https://www.kaggle.com/competitions/m5-forecasting-accuracy/data```
 
+It contains 3 tables:
+1. sales : This table contains day-wise sale data for every product (across 3 states in various stores) for about 1900 days.
+2. sell_prices : Contains weekly data for price of each product.
+3. calendar: It is the link between the 2 tables. the day (in sales) and the week (in sell_prices). Along with this, it contains information about special events which can significantly affect sale of certain products.
+
 To run this, 1st create a ``` .env ``` file which should contain a KAGGLE_API_TOKEN (which you can generate from here: ```https://www.kaggle.com/settings/api```)
 ```
 KAGGLE_API_TOKEN=KGAT_...

@@ -1,2 +1,5 @@
 kagglehub
 python-dotenv
+pandas
+statsmodels
+ipykernel
