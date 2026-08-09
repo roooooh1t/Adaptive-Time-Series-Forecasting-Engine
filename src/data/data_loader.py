@@ -13,4 +13,4 @@ load_dotenv(dotenv_path=".env")
 os.environ["KAGGLE_API_TOKEN"] = os.getenv("KAGGLE_API_TOKEN") 
 
 # Download the actual m5 dataset directly from kaggle (You must have joined this compitition to be able to download (Else will get 403 error))
-kagglehub.competition_download("m5-forecasting-accuracy", output_dir=f"{BASE_DIR}/../../data") 
+kagglehub.competition_download("m5-forecasting-accuracy", output_dir=f"{BASE_DIR}/../../data/raw") 

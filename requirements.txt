@@ -1,2 +1,6 @@
 kagglehub
 python-dotenv
+pandas
+statsmodels
+matplotlib
+scikit-learn
