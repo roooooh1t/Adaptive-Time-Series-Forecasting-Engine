@@ -1,0 +1,58 @@
+# config/config.yaml
+# Central configuration for the project.
+# All scripts read from here instead of hardcoding values.
+
+project:
+  name: "Adaptive-Time-Series-Forecasting-Engine"
+  random_seed: 42
+
+paths:
+  raw_data: "data/raw"
+  interim_data: "data/interim"
+  processed_data: "data/processed"
+  external_data: "data/external"
+  artifacts: "artifacts"
+  model_dir: "artifacts/models"
+  reports_dir: "artifacts/reports"
+
+data:
+  # Use validation file during development, evaluation file for final scoring
+  use_evaluation_file: false
+  intermittent_zero_threshold: 0.4   # fraction of zero-sales days to flag a series "intermittent"
+
+forecast:
+  horizons: [1, 7, 30]                # forecast horizons in days
+  target_col: "sales"
+  date_col: "date"
+
+walk_forward_cv:
+  initial_train_days: 730             # ~2 years initial training window
+  step_size_days: 28                  # M5's native 4-week cycle
+  n_splits: 10
+  gap_days: 0                         # gap between train end and test start (0 = no gap)
+
+stationarity:
+  adf_significance: 0.05
+  kpss_significance: 0.05
+  max_diff_order: 2                   # cap on how many times a series can be differenced
+
+evaluation:
+  primary_metric: "wrmsse"            # official M5 metric
+  secondary_metrics: ["rmse", "mape"]
+  backtest_signal_threshold: 0.1      # min forecast deviation to count as a "signal" for Sharpe-style backtest
+
+deep_learning:
+  device: "auto"                      # "auto" resolves to cuda/mps/cpu at runtime
+  batch_size: 64
+  sequence_length: 28                 # lookback window fed into LSTM/GRU
+  epochs: 50
+  early_stopping_patience: 5
+  learning_rate: 0.001
+
+logging:
+  level: "INFO"
+  log_dir: "artifacts/logs"
+
+retrain:
+  staleness_days: 28                  # trigger retrain if model hasn't been refreshed in N days
+  performance_drift_threshold: 0.15   # trigger retrain if WRMSSE degrades >15% vs last known baseline

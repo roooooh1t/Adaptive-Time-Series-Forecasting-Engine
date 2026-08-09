@@ -22,7 +22,7 @@ class Data():
         # Load the kaggle token
         os.environ["KAGGLE_API_TOKEN"] = os.getenv("KAGGLE_API_TOKEN") 
 
-        if not os.path.exists(f"{self.data_path}sales_train_evaluation.csv"):
+        if not os.path.exists(f"{self.data_path}/sales_train_evaluation.csv"):
             # Download the actual m5 dataset directly from kaggle (You must have joined this compitition to be able to download (Else will get 403 error))
             kagglehub.competition_download("m5-forecasting-accuracy", output_dir=self.data_path) 
 
@@ -42,8 +42,8 @@ class Data():
         sell_prices = pd.read_csv(f"{self.data_path}/sell_prices.csv")
 
         if choice == 'single_prod_day_wise':
-            sell_prices['item_id']
-            data = sales[product_id][6 : self.train_val_split]
+            # data = sales[sales['id'] == product_id][6 : self.train_val_split]
+            data = sales[sales['id'] == product_id].iloc[: , 6 : ]
 
         elif choice == 'all_prod_of_1_shop':
             pass
