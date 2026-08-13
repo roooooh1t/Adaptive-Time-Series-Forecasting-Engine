@@ -39,6 +39,11 @@ class Data():
             a. data of that product across all the shops in all states
             b. data of all the products in that shop.
     '''
+
+    def get_prod_id_list(self):
+        train_sales = pd.read_csv(f"{self.data_path}/sales_train_validation.csv")
+        return train_sales['id']
+
     def get_train_data(self, product_id, choice1 : Literal['train', 'validate', 'test'] = 'train' ,  choice2  : Literal['single_prod_day_wise', 'all_prod_of_1_shop', 'one_prod_in_all_shops'] = 'single_prod_day_wise'):
         train_sales = pd.read_csv(f"{self.data_path}/sales_train_validation.csv")
         test_sales = pd.read_csv(f"{self.data_path}/sales_train_evaluation.csv")
