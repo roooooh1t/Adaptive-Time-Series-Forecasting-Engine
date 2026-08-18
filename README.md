@@ -15,3 +15,8 @@ KAGGLE_API_TOKEN=KGAT_...
 
 Then go to ``` /src/data/ ``` and run ```data_loader.py``` to get a local copy of the data. 
 For this, first join the competition here : ```https://www.kaggle.com/competitions/m5-forecasting-accuracy```, otherwise you will get 403 (forbidden) errors.
+
+
+## Differencing Order 
+Choosing d = 0, we get 1573 data points (5%) which are non stationary under p95
+Choosing d = 2, we get only 1 data point which is non stationary and that too with probability of 0.07 of it being non stationary, Hence we chose d = 2.
