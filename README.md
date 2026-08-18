@@ -20,3 +20,13 @@ For this, first join the competition here : ```https://www.kaggle.com/competitio
 ## Differencing Order 
 Choosing d = 0, we get 1573 data points (5%) which are non stationary under p95
 Choosing d = 2, we get only 1 data point which is non stationary and that too with probability of 0.07 of it being non stationary, Hence we chose d = 2.
+
+# VAR
+## Metrics
+On 1st product, when used it's correlated with the same product in all stores:
+    Metric  Average Score
+       MAE       0.594353
+      RMSE       0.788758
+      WAPE       1.545878
+     WRMSE       2.494273
+mean_error       0.159721
