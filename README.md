@@ -30,3 +30,9 @@ On 1st product, when used it's correlated with the same product in all stores:
       WAPE       1.545878
      WRMSE       2.494273
 mean_error       0.159721
+
+## RNN
+Guide to implement RNN on Time Series: ```https://www.codecademy.com/article/rnn-py-torch-time-series-tutorial-complete-guide-to-implementation```
+
+## CoIntegration
+Among the 31,459 candidate pairs tested using the Engle–Granger cointegration test, 75% (23,767 pairs) reject the null hypothesis of no cointegration at the 5% significance level, indicating substantial evidence of pairwise cointegration. The remaining 25% (7,500 pairs) do not provide sufficient evidence of cointegration.
